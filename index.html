@@ -10,7 +10,7 @@ to do>>>
 - [ ]프로젝트 부분에 설명칸과 이미지가 분리되어 보이게
 - [ ]projct description 부분 text 가 영역 밖으로 나가지 않게 설정
 - [ ]프로젝트 부분 마우스 올릴시 밝기가 올라가는 hover
-- [ ]프로젝트 부분 클릭시 각 해당하는 링크로 이동
+- [~]프로젝트 부분 클릭시 각 해당하는 링크로 이동
 - [ ]창 사이즈에 맞게 각 요소 사이즈가 변하지 않게 고정할 것
 
 <later>
@@ -23,11 +23,19 @@ to do>>>
 - 밝은/어두운 모드 전환버튼
 - CSS를 별도의 .css파일로 분리하고 관리할 것
 <memo>
-skill 부분 hover 추가하였음
-hover 단일색에서 그라데이션으로 변경
-project부분은 이미지랑 텍스트 영역을 구분할건데 project class에 해당하는 태그안에 각각 넣어야하나? 위치는 relative로? grid로?
-*position 으로 우선순위가 정해지면. z-index: number; 로 순서 정할 수 있다.
-skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
+position: relative 로 하면 원래 위치의 기준으로 변하면서 다른 요소들의 위치에도 영향을 받음 (상대적 위치)
+position: absolute 담겨있는 상자 기준으로 위치가 잡힘 (부모요소 기준)
+position: fixed 절대위치 기준(페이지 기준)
+
+각 프로젝트로 연결되는 html생성, 링크 추가함
+
+프로젝트 박스 클릭시 해당 페이지로 이동되는건 article을 a태그로 감싸서 연결함
+
+
+
+<issue>
+- 창 크기가 조절되면 project상자와 메시지 박스의 크기가 어긋나는 상황
+    └ <article>에 링크를 추가하면서 <a>로 감싸니까 해결됨..?
 -->
 
 <head>
@@ -47,7 +55,7 @@ skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
             letter-spacing: 6px;
         }
 
-        #skill{
+        #skill {
             display: flex;
             justify-content: center;
         }
@@ -56,10 +64,9 @@ skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
             font-size: 20px;
             color: #FFFFFF;
 
-            margin: 10px 10px 10px; /*상단 좌우 하단*/
-
+            margin: 10px 10px 10px;
+            /*상단 좌우 하단*/
             padding: 3px;
-
 
             width: 100px;
             height: 30px;
@@ -73,11 +80,12 @@ skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
             transition: color 0.3s ease, backgorund-color 2s ease;
 
         }
+
         .skills:hover {
             transform: scale(1.1);
             color: #242424;
-            
-            background: linear-gradient(to Bottom right, #00ffa3, #39F7F2);
+
+            background: linear-gradient(to Bottom right, #00FFA3, #39F7F2);
         }
 
         .project {
@@ -85,13 +93,24 @@ skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
             width: 300px;
             height: 440px;
             margin: 40px;
+            position: relative;
 
         }
-        .projectBox {
-            width: 100px;
-            height: 100px;
-            background-color: #FFFFFF;
+
+        .project:hover {
+            box-shadow: 0px 0px 20px #00FFA3;
         }
+
+        .projectBox {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+
+            width: 300px;
+            height: 80px;
+            background-color: #00000095;
+        }
+
         /*
         .projectPhoto {
 
@@ -118,7 +137,8 @@ skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
             justify-content: center;
             gap: 0px;
         }
-        #section1 > h2 {
+
+        #section1>h2 {
             margin-left: 40px;
         }
 
@@ -152,18 +172,30 @@ skill text도 커지게 보이게 하려면 transform: scale(값);으로 조절
             <h2>Last Project</h2>
 
             <div>
-                <article class="project">
-                    Project1
-                    <div class="projectBox">
-                        
-                    </div>
-                </article>
-                <article class="project">
-                    Project2
-                </article>
-                <article class="project">
-                    Project3
-                </article>
+                <a href="pr1.html">
+                    <article class="project">
+                        Project1
+                        <div class="projectBox">
+
+                        </div>
+                    </article>
+                </a>
+                <a href="pr2.html">
+                    <article class="project">
+                        Project2
+                        <div class="projectBox">
+
+                        </div>
+                    </article>
+                </a>
+                <a href="pr3.html">
+                    <article class="project">
+                        Project3
+                        <div class="projectBox">
+
+                        </div>
+                    </article>
+                </a>
             </div>
 
         </section>
