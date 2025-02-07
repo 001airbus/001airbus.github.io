@@ -3,9 +3,43 @@
     <head>
         <meta charset="utf-8">
         <title>Project page 1</title>
+
+        <style>
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .content {
+                display:felx;
+            }
+            footer{
+                border-top: 1px solid black;
+                text-align:center;
+            }
+            main {
+                flex-basis: 1240px;
+                flex-shrink: 0;
+                padding: 20px;
+            }
+        </style>
     </head>
     <body>
-        <div>project page 1</div>
+        <div class="container">
+            <header>
+                <h1>header</h1>
+            </header>
+            <section class="content">
+
+                <main>
+                    main
+
+                </main>
+
+            </section>
+            <footer>
+                <p>footer</p>
+            </footer>
+        </div>
 
     </body>
 </html>
