@@ -16,18 +16,20 @@
         }
 
         html {
-            /*background-color: #0D0D0D;
+            background-color: #0D0D0D;
                 color: #FFFFFF;*/
+            
         }
 
         .container {
             display: flex;
             flex-direction: column;
         }
+        /*
 
         .content {
-            display: felx;
-        }
+
+        }/*
 
         header {
             width: 100%;
@@ -71,6 +73,7 @@
 
             display: flex;
             align-items: center;
+            min-height: 300px;
         }
         figure .intro {
             margin-left: 340px;
@@ -83,8 +86,25 @@
             color: #FFFFFF;
             font-size: 2rem;
         }*/
+        section.content {
+            background-color: #0D0D0D;
+            color: #FFFFFF;
+            min-width: 1024px;
+            margin-top: 100px;
+        }
+        .content article h2 {
+            font-size: 2rem;
+        }
+
+        section article div {
+            padding: 20px;
+            background-color: #0D0D0D;
+            margin: 40px 20px 20px 20px;
+            color: #cfcfcf;
+            
+        }
         #article1 {
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             display: flex;
             justify-content: center;
             margin: 10px;
@@ -93,11 +113,10 @@
 
             width: 60vw;
             height: 30vh;
-            background-color: #3F9FFF;
-            margin: 20px;
+            /*background-color: #3F9FFF;*/
         }
         #article2 {
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             display: flex;
             justify-content: center;
             margin: 10px;
@@ -105,11 +124,11 @@
         #article2 div {
             width: 60vw;
             height: 30vh;
-            background-color: #3F9FFF;
+            /*background-color: #3F9FFF;*/
             margin: 20px;
         }
         #article3 {
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             display: flex;
             justify-content: center;
             margin: 10px;
@@ -117,7 +136,7 @@
         #article3 div {
             width: 60vw;
             height: 30vh;
-            background-color: #3F9FFF;
+            /*background-color: #3F9FFF;*/
             margin:20px;
         }
 
@@ -125,16 +144,49 @@
         footer {
             display: flex;
             height: 100px;
-            border-top: 1px solid black;
+            /*border-top: 1px solid black;*/
             /*text-align: center;*/
             justify-content: center;
             align-items: center;
-            flex-direction: column;;
+            flex-direction: column;
+            background-color: #0D0D0D;
+            color: #FFFFFF;
         }
 
         footer span {
             display: flex;
         }
+
+
+
+
+
+        #skills {
+            display: flex;
+        }
+        #skills p {
+            flex-direction: column;
+            border: 2px solid #3F9FFF;
+            border-radius: 10px;
+
+            height: 40px;;
+            width: auto;
+
+            padding: 10px;
+            margin: 10px;
+
+            background-color: #0D0D0D;
+
+        }
+        #skills p:hover {
+            transform: scale(1.2);
+            color: #FFFFFF;
+            background: linear-gradient(to Bottom right, #3F9FFF, #5C3FFF);
+            /*기본 p에 background가 있어야함*/
+            border: 2px solid #3F9FFF;
+            box-shadow: 0px 0px 4px #3F9FFF;
+        }
+
 
 
     </style>
@@ -160,19 +212,24 @@
     </figure>
     <section class="content">
         <article id="article1">
-            about
+            <h2>about</h2>
             <div>
-                divdivdiv
+                소개글 적는곳<br>소개글에 관련한 글.<br><br><경력><br>- <br>- <br><br><프로젝트><br>- <br>- 
             </div>
         </article>
         <article id="article2">
-            skills
+            <h2>skills</h2>
             <div>
+                <div id="skills">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                </div>
 
             </div>
         </article>
         <article id="article3">
-            project
+            <h2>project</h2>
             <div>
 
             </div>
